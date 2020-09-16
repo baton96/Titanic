@@ -1,4 +1,4 @@
-# CONTEXT
+# Context
 &nbsp;&nbsp;&nbsp;&nbsp;This projects was created for the course of "Machine Learning" on the International Hellenic University in Thessaloniki during my Erasmus stay and consists of a prediction model in Kaggle's *"legendary Titanic ML competition"*, as it was called by its creators, where *"the competition is simple - use machine learning to create a model that predicts which passengers survived the Titanic shipwreck*".
 
 &nbsp;&nbsp;More information about this competition can be found on it's [official site](https://www.kaggle.com/c/titanic).
@@ -19,7 +19,7 @@ PassengerId,Survived
 894,0
 Etc.
 ```
-# DATA
+# Data
 The data is split into two groups:
 * training set ([train.csv](train.csv))
 * test set ([test.csv](test.csv))  
@@ -53,3 +53,15 @@ parch: The dataset defines family relations in this way
 Parent = mother, father  
 Child = daughter, son, stepdaughter, stepson  
 Some children travelled only with a nanny, therefore parch=0 for them
+# Rules
+1. **One account per participant**  
+You cannot sign up to Kaggle from multiple accounts and therefore you cannot submit from multiple accounts.
+2. **No private sharing outside teams**  
+Privately sharing code or data outside of teams is not permitted. It's okay to share code if made available to all participants on the forums.
+3. **Team Mergers**  
+Team mergers are allowed and can be performed by the team leader. In order to merge, the combined team must have a total submission count less than or equal to the maximum allowed as of the merge date. The maximum allowed is the number of submissions per day multiplied by the number of days the competition has been running.
+4. **Team Limits**  
+There is no maximum team size.
+5. **Submission Limits**  
+You may submit a maximum of 10 entries per day.  
+You may select up to 5 final submissions for judging.
