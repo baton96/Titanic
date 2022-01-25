@@ -1,17 +1,34 @@
 # ⚓ Titanic ⚓
-This projects was created for the course of "Machine Learning" on the International Hellenic University in Thessaloniki during my Erasmus stay and consists of a prediction model in Kaggle's *"legendary Titanic ML competition"*, as it was called by its creators, where *"the competition is simple - use machine learning to create a model that predicts which passengers survived the Titanic shipwreck*".
+
+This projects was created for the course of "Machine Learning" on the International Hellenic University in Thessaloniki
+during my Erasmus stay and consists of a prediction model in Kaggle's *"legendary Titanic ML competition"*, as it was
+called by its creators, where *"the competition is simple - use machine learning to create a model that predicts which
+passengers survived the Titanic shipwreck*".
 
 More information about this competition can be found on it's [official site](https://www.kaggle.com/c/titanic).
+
+**Obtained accuracy is 82.54 %**
+
 ## Goal
-The goal is to predict if a passenger survived the sinking of the Titanic or not. For each entry in the test set, you must make a prediction in a form of either 0 or 1.
+
+The goal is to predict if a passenger survived the sinking of the Titanic or not. For each entry in the test set, you
+must make a prediction in a form of either 0 or 1.
+
 ## Metric
-Score is measured by the percentage of passengers predicted correctly ([accuracy](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification)).
+
+Score is measured by the percentage of passengers predicted
+correctly ([accuracy](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification)).
+
 ## Submission File Format
-Submission has to be a csv file with exactly 418 entries plus a header row and will show an error if it has extra columns (beyond PassengerId and Survived) or rows.
+
+Submission has to be a csv file with exactly 418 entries plus a header row and will show an error if it has extra
+columns (beyond PassengerId and Survived) or rows.
 
 File should have exactly 2 columns:
+
 * PassengerId (sorted in any order)
-* Survived (contains your binary predictions: 1 for survived, 0 for deceased)  
+* Survived (contains your binary predictions: 1 for survived, 0 for deceased)
+
 ```
 PassengerId,  Survived
 892,          0
