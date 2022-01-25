@@ -1,28 +1,20 @@
-import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
-from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.model_selection import cross_val_score, KFold
 from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler, MaxAbsScaler
+from sklearn.preprocessing import StandardScaler
 from sklearn.semi_supervised import LabelPropagation, LabelSpreading
-
-np.random.seed(0)
 
 
 def test_n_save(name, model):
-    cv = StratifiedKFold(20, shuffle=True)
-    if name == 'BernoulliNB':
-        scaler = MaxAbsScaler()
-    else:
-        scaler = StandardScaler()
-
-    pipeline = make_pipeline(SimpleImputer(), scaler, model)
+    pipeline = make_pipeline(SimpleImputer(), StandardScaler(), model)
     pipeline.fit(train, y)
-    scores = cross_val_score(pipeline, train, y, cv=cv)
-    print(name + " Cross-validation accuracy: %f" % scores.mean())
+    scores = cross_val_score(pipeline, train, y, cv=KFold(20))
+    print(name, "Cross-validation accuracy:%f" % scores.mean())
 
     predictions = pipeline.predict(test)
-    print(name + " Real accuracy: %f" % np.equal(survived, predictions).mean())
+    acc = sum(s == p for s, p in zip(survived, predictions)) / len(predictions)
+    print(name, "Real accuracy: %f" % acc)
 
     # output = pd.DataFrame({'PassengerId': testId, 'Survived': predictions})
     # output.to_csv(name + '.csv', index=False)
@@ -87,5 +79,5 @@ for col in data.columns:
     train[col] = data[col][:891]
     test[col] = data[col][891:]
 
-test_n_save('LabelPropagation', LabelPropagation('knn', n_neighbors=10))
-test_n_save('LabelSpreading', LabelSpreading('knn', n_neighbors=10))
+test_n_save('LabelPropagation', LabelPropagation('knn', n_neighbors=10, n_jobs=-1))
+test_n_save('LabelSpreading', LabelSpreading('knn', n_neighbors=10, n_jobs=-1))
